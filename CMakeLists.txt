@@ -6230,6 +6230,7 @@ set(SOURCE_FILES
 	"${UE4_ROOT_PATH}/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/CompareScreenshotsCommandlet.cpp"
 	"${UE4_ROOT_PATH}/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/ScreenshotTools.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/CGMergedProject.cpp"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/FileHandler.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/Logger.cpp"
  )
 
@@ -14601,6 +14602,7 @@ set(HEADER_FILES
 	"${UE4_ROOT_PATH}/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/ScreenshotToolsPrivatePCH.h"
 	"${UE4_ROOT_PATH}/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Public/ScreenshotTools.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/CGMergedProject.h"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/FileHandler.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/Logger.h"
  )
 

@@ -6219,6 +6219,7 @@ SOURCES += \
 	"$$unrealRootPath/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/CompareScreenshotsCommandlet.cpp" \
 	"$$unrealRootPath/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/ScreenshotTools.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/CGMergedProject.cpp" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/FileHandler.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/Logger.cpp" \
  
 

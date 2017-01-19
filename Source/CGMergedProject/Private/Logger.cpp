@@ -75,4 +75,3 @@ void ALogger::log(FString msg){
 		logfile << TCHAR_TO_UTF8(*msg) << "\n";
 	}
 }
-
