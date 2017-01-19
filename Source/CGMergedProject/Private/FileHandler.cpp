@@ -27,11 +27,11 @@ TArray<FString> AFileHandler::GetAllLevels(FString folder){
 	return Names;
 }
 
-TArray<FString> AFileHandler::GetAllFiles(const FString& folder){
+TArray<FString> AFileHandler::GetAllFiles(const FString& baseDir, bool includeFiles, bool includeDirs){
 	IPlatformFile& PlatformFile = FPlatformFileManager::Get().GetPlatformFile();
 	TArray<FString> files = TArray<FString>();	
-	if (!PlatformFile.DirectoryExists(*folder)){
-		
-	}
+	IFileManager& FileManager = IFileManager::Get();
+	FileManager.FindFiles(files, *baseDir, includeFiles, includeDirs);
+	files.Sort();
 	return files;
 }

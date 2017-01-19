@@ -19,5 +19,5 @@ public:
 	static TArray<FString> GetAllLevels(FString folder);
 
 	UFUNCTION(BlueprintCallable, Category="FileHandler")
-	static TArray<FString> GetAllFiles(const FString& folder);
+	static TArray<FString> GetAllFiles(const FString& baseDir, bool includeFiles, bool includeDirs);
 };
