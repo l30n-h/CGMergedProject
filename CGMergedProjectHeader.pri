@@ -8368,5 +8368,6 @@ HEADERS += \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/CGMergedProject.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/FileHandler.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/Logger.h" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/SceneObjectInfo.h" \
  
 

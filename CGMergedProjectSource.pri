@@ -6221,5 +6221,6 @@ SOURCES += \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/CGMergedProject.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/FileHandler.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/Logger.cpp" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/SceneObjectInfo.cpp" \
  
 

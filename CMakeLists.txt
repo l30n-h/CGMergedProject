@@ -6232,6 +6232,7 @@ set(SOURCE_FILES
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/CGMergedProject.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/FileHandler.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/Logger.cpp"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/SceneObjectInfo.cpp"
  )
 
 set(HEADER_FILES 
@@ -14604,6 +14605,7 @@ set(HEADER_FILES
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/CGMergedProject.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/FileHandler.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/Logger.h"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/SceneObjectInfo.h"
  )
 
 set(CONFIG_FILES 

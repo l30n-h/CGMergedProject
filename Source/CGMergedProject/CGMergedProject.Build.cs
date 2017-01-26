@@ -6,7 +6,7 @@ public class CGMergedProject : ModuleRules
 {
 	public CGMergedProject(TargetInfo Target)
 	{
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "JsonUtilities"  });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
