@@ -1,30 +1,22 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-#include "JsonObjectConverter.h"
-#include "Object.h"
+#include <sstream> 
+#include <fstream>
+#include <iostream>
+#include <string>
 #include "FileHandler.generated.h"
-/**
- * 
- */
+using namespace std;
 
-USTRUCT(BlueprintType)
-struct FObjectData{
-	GENERATED_USTRUCT_BODY()
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Json")
-	FString id;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Json")
-	FTransform transform;
-};
-
-UCLASS()
+UCLASS(EditInlineNew, Meta = (BlueprintSpawnableComponent))
 class CGMERGEDPROJECT_API UFileHandler : public UObject
 {
-	GENERATED_BODY()
+	GENERATED_BODY()	
 
-public:
+public:	
+
+	UFUNCTION(BlueprintCallable, Category="FileHandler")
+	static FString getHomeDir();	
 
 	UFUNCTION(BlueprintCallable, Category="FileHandler")
 	static TArray<FString> GetAllLevels(FString folder);
@@ -32,11 +24,27 @@ public:
 	UFUNCTION(BlueprintCallable, Category="FileHandler")
 	static TArray<FString> GetAllFiles(const FString& baseDir, bool includeFiles, bool includeDirs);
 
-	UFUNCTION(BlueprintCallable, Category="Json")
-	static TArray<FObjectData> fromJson(const FString inString);
+	/*UFUNCTION(BlueprintCallable, Category="FileHandler")
+	static UFileHandler* openFile(FString dir, FString file, UObject *owner);*/
 
-	UFUNCTION(BlueprintCallable, Category="Json")
-	static FString toJson(FObjectData objectData);
+	ofstream *handle;
+	
+	void setHandle(ofstream *h);
+
+	UFUNCTION(BlueprintCallable, Category="FileHandler")
+	bool openFile(FString dir, FString file);
+
+	UFUNCTION(BlueprintCallable, Category="FileHandler")
+	bool isOpen();
+
+	UFUNCTION(BlueprintCallable, Category="FileHandler")
+	void close();
+
+	UFUNCTION(BlueprintCallable, Category="FileHandler")
+	void write(FString text);
+
+	UFUNCTION(BlueprintCallable, Category="FileHandler")
+	void writeLine(FString text);
 };
 
 
