@@ -42,7 +42,7 @@ TArray<FString> UFileHandler::GetAllFiles(const FString& baseDir, bool includeFi
 	return files;
 }
 
-/*UFileHandler* UFileHandler::openFile(FString dir, FString file, UObject *owner, ){	
+/*UFileHandler* UFileHandler::openFile(FString dir, FString file, UObject *owner){	
 	stringstream sb;
 	sb << TCHAR_TO_UTF8(*dir)<<TCHAR_TO_UTF8(*file)<<".txt";
 	string filePath = sb.str();
@@ -68,11 +68,8 @@ bool UFileHandler::openFile(FString dir, FString file){
 	}
 	ofstream f;
 	f.open(filePath);
-	if(!f.is_open()){
-		return false;
-	}
 	setHandle(&f);
-	return true;
+	return !f.is_open();
 }
 
 bool UFileHandler::isOpen(){
