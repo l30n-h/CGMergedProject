@@ -6,10 +6,8 @@
 #include <iostream>
 #include <string>
 #include "FileHandler.generated.h"
-using namespace std;
 
-//UCLASS()
-UCLASS(EditInlineNew, Meta = (BlueprintSpawnableComponent))
+UCLASS()
 class CGMERGEDPROJECT_API UFileHandler : public UObject
 {
 	GENERATED_BODY()	
@@ -25,15 +23,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category="FileHandler")
 	static TArray<FString> GetAllFiles(const FString& baseDir, bool includeFiles, bool includeDirs);
 
-	/*UFUNCTION(BlueprintCallable, Category="FileHandler")
-	static UFileHandler* openFile(FString dir, FString file, UObject *owner);
-	*/
-	ofstream *handle;
-	
-	void setHandle(ofstream *h);
-
 	UFUNCTION(BlueprintCallable, Category="FileHandler")
-	bool openFile(FString dir, FString file);
+	static UFileHandler* openFile(FString dir, FString file, UObject* owner);
+	
+	virtual void BeginDestroy() override;
+
+	std::ofstream handle;
 
 	UFUNCTION(BlueprintCallable, Category="FileHandler")
 	bool isOpen();

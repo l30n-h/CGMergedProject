@@ -6231,8 +6231,11 @@ set(SOURCE_FILES
 	"${UE4_ROOT_PATH}/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/ScreenshotTools.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/CGMergedProject.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/FileHandler.cpp"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/JsonHandler.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/Logger.cpp"
-	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/SceneObjectInfo.cpp"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/ObjectData.cpp"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/RecordData.cpp"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/TimeStepData.cpp"
  )
 
 set(HEADER_FILES 
@@ -14604,8 +14607,11 @@ set(HEADER_FILES
 	"${UE4_ROOT_PATH}/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Public/ScreenshotTools.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/CGMergedProject.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/FileHandler.h"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/JsonHandler.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/Logger.h"
-	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/SceneObjectInfo.h"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/ObjectData.h"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/RecordData.h"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/TimeStepData.h"
  )
 
 set(CONFIG_FILES 
@@ -18747,6 +18753,9 @@ include_directories(
 	"${UE4_ROOT_PATH}/Engine/Source/Editor/Kismet/Public/WorkflowOrientedApp"
 	"${UE4_ROOT_PATH}/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/Kismet"
 	"${UE4_ROOT_PATH}/Engine/Source/Editor/Kismet"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/JsonUtilities/Public"
+	"${UE4_ROOT_PATH}/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/JsonUtilities"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/JsonUtilities"
  )
 
 add_definitions( 

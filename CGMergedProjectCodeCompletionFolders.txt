@@ -3640,3 +3640,6 @@
 /home/leon/Downloads/UnrealEngine-4.14.1-release/Engine/Source/Editor/Kismet/Public/WorkflowOrientedApp
 /home/leon/Downloads/UnrealEngine-4.14.1-release/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/Kismet
 /home/leon/Downloads/UnrealEngine-4.14.1-release/Engine/Source/Editor/Kismet
+/home/leon/Downloads/UnrealEngine-4.14.1-release/Engine/Source/Runtime/JsonUtilities/Public
+/home/leon/Downloads/UnrealEngine-4.14.1-release/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/JsonUtilities
+/home/leon/Downloads/UnrealEngine-4.14.1-release/Engine/Source/Runtime/JsonUtilities

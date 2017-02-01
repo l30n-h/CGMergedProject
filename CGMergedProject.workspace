@@ -3643,6 +3643,9 @@
     <Include Path="/home/leon/Downloads/UnrealEngine-4.14.1-release/Engine/Source/Editor/Kismet/Public/WorkflowOrientedApp" />
     <Include Path="/home/leon/Downloads/UnrealEngine-4.14.1-release/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/Kismet" />
     <Include Path="/home/leon/Downloads/UnrealEngine-4.14.1-release/Engine/Source/Editor/Kismet" />
+    <Include Path="/home/leon/Downloads/UnrealEngine-4.14.1-release/Engine/Source/Runtime/JsonUtilities/Public" />
+    <Include Path="/home/leon/Downloads/UnrealEngine-4.14.1-release/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/JsonUtilities" />
+    <Include Path="/home/leon/Downloads/UnrealEngine-4.14.1-release/Engine/Source/Runtime/JsonUtilities" />
   </WorkspaceParserPaths>
   <Project Name="UE4Client" Path="Intermediate/ProjectFiles/UE4Client.project" Active="No" />
   <Project Name="UE4Editor" Path="Intermediate/ProjectFiles/UE4Editor.project" Active="No" />

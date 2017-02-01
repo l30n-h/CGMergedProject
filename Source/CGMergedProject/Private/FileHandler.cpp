@@ -5,12 +5,12 @@
 
 
 FString UFileHandler::getHomeDir(){
-	stringstream sb;
+	std::stringstream sb;
 	char* homePath;
-	if ((homePath = getenv("HOME"))!=NULL){//Linux Mac
+	if ((homePath = std::getenv("HOME"))!=NULL){//Linux Mac
 		sb << homePath<<"/";
-	}else if((homePath = getenv("HOMEPATH"))!=NULL){//Windows
-		sb << getenv("HOMEDRIVE") << homePath<<"\\";
+	}else if((homePath = std::getenv("HOMEPATH"))!=NULL){//Windows
+		sb << std::getenv("HOMEDRIVE") << homePath<<"\\";
 	}else{
 		//TODO assert
 	}
@@ -42,58 +42,37 @@ TArray<FString> UFileHandler::GetAllFiles(const FString& baseDir, bool includeFi
 	return files;
 }
 
-/*UFileHandler* UFileHandler::openFile(FString dir, FString file, UObject *owner){	
-	stringstream sb;
-	sb << TCHAR_TO_UTF8(*dir)<<TCHAR_TO_UTF8(*file)<<".txt";
-	string filePath = sb.str();
-	if (ifstream(filePath)){
-		return NULL;
-	}
-	ofstream f;
-	f.open(filePath);
-	if(!f.is_open()){
-		return NULL;
-	}
+UFileHandler* UFileHandler::openFile(FString dir, FString file, UObject* owner){
 	UFileHandler *fH = NewObject<UFileHandler>(owner);
-	fH->setHandle(&f);
-	return fH;
-}*/
-
-bool UFileHandler::openFile(FString dir, FString file){
-	stringstream sb;
+	std::stringstream sb;
 	sb << TCHAR_TO_UTF8(*dir)<<TCHAR_TO_UTF8(*file)<<".txt";
-	string filePath = sb.str();
-	if (ifstream(filePath)){
-		return false;
-	}
-	ofstream f;
-	f.open(filePath);
-	setHandle(&f);
-	return !f.is_open();
+	(fH->handle).open(sb.str());
+	return fH;
+}
+
+void UFileHandler::BeginDestroy(){
+	Super::BeginDestroy();
+	close();
 }
 
 bool UFileHandler::isOpen(){
-	return handle->is_open();
+	return handle.is_open();
 }
 
 void UFileHandler::close(){
 	if(isOpen()){
-		handle->close();
+		handle.close();
 	}
 }
 
 void UFileHandler::write(FString text){
 	if(isOpen()){
-		(*handle) << TCHAR_TO_UTF8(*text);
+		handle << TCHAR_TO_UTF8(*text);
 	}
 }
 
 void UFileHandler::writeLine(FString text){
 	if(isOpen()){
-		(*handle) << TCHAR_TO_UTF8(*text) << "\n";
+		handle << TCHAR_TO_UTF8(*text) << "\n";
 	}
-}
-
-void UFileHandler::setHandle(ofstream *h){
-	handle = h;
 }

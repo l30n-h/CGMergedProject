@@ -8367,7 +8367,10 @@ HEADERS += \
 	"$$unrealRootPath/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Public/ScreenshotTools.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/CGMergedProject.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/FileHandler.h" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/JsonHandler.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/Logger.h" \
-	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/SceneObjectInfo.h" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/ObjectData.h" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/RecordData.h" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/TimeStepData.h" \
  
 
