@@ -9,6 +9,18 @@ TArray<FObjectData> UJsonHandler::getObjectDataFromJson(const FString inString){
 	return array;
 }
 
+TArray<FTimeStepData> UJsonHandler::getTimeStepDataFromJson(const FString inString){
+	TArray<FTimeStepData> array;
+ 	FJsonObjectConverter::JsonArrayStringToUStruct(inString, &array, 0, 0);
+	return array;
+}
+
+FRecordData UJsonHandler::getRecordDataFromJson(const FString inString){
+	FRecordData out;	
+	FJsonObjectConverter::JsonObjectStringToUStruct(inString, &out, 0, 0);
+	return out;
+}
+
 FString UJsonHandler::getJsonFromObjectData(FObjectData objectData){
 	FString outString;
 	FJsonObjectConverter::UStructToJsonObjectString(objectData, outString, 0, 0, 1);

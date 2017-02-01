@@ -42,11 +42,12 @@ TArray<FString> UFileHandler::GetAllFiles(const FString& baseDir, bool includeFi
 	return files;
 }
 
-UFileHandler* UFileHandler::openFile(FString dir, FString file, UObject* owner){
+UFileHandler* UFileHandler::openFile(UObject* owner, FString dir, FString file, bool write){
 	UFileHandler *fH = NewObject<UFileHandler>(owner);
 	std::stringstream sb;
 	sb << TCHAR_TO_UTF8(*dir)<<TCHAR_TO_UTF8(*file)<<".txt";
-	(fH->handle).open(sb.str());
+	int mode = write?std::fstream::out:std::fstream::in;
+	(fH->handle).open(sb.str(), mode);
 	return fH;
 }
 
@@ -63,6 +64,15 @@ void UFileHandler::close(){
 	if(isOpen()){
 		handle.close();
 	}
+}
+
+FString UFileHandler::readAll(){
+	if(isOpen()){
+		std::string content((std::istreambuf_iterator<char>(handle)), std::istreambuf_iterator<char>());
+		close();
+		return UTF8_TO_TCHAR(content.c_str());
+	}
+	return UTF8_TO_TCHAR("");
 }
 
 void UFileHandler::write(FString text){

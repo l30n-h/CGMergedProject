@@ -17,6 +17,12 @@ public:
 	static TArray<FObjectData> getObjectDataFromJson(const FString inString);
 
 	UFUNCTION(BlueprintCallable, Category="Json")
+	static TArray<FTimeStepData> getTimeStepDataFromJson(const FString inString);
+
+	UFUNCTION(BlueprintCallable, Category="Json")
+	static FRecordData getRecordDataFromJson(const FString inString);
+
+	UFUNCTION(BlueprintCallable, Category="Json")
 	static FString getJsonFromObjectData(FObjectData objectData);
 
 	UFUNCTION(BlueprintCallable, Category="Json")
