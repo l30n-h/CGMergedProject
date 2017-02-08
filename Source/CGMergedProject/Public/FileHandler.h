@@ -10,7 +10,7 @@
 UCLASS()
 class CGMERGEDPROJECT_API UFileHandler : public UObject
 {
-	GENERATED_BODY()	
+	GENERATED_BODY()
 
 public:	
 

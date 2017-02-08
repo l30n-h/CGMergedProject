@@ -6221,9 +6221,9 @@ SOURCES += \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/CGMergedProject.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/FileHandler.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/JsonHandler.cpp" \
-	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/Logger.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/ObjectData.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/RecordData.cpp" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/StringIntMap.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/TimeStepData.cpp" \
  
 
