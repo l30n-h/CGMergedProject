@@ -42,18 +42,34 @@ TArray<FString> UFileHandler::GetAllFiles(const FString& baseDir, bool includeFi
 	return files;
 }
 
-UFileHandler* UFileHandler::openFile(UObject* owner, FString dir, FString file, bool write){
-	UFileHandler *fH = NewObject<UFileHandler>(owner);
-	std::stringstream sb;
-	sb << TCHAR_TO_UTF8(*dir)<<TCHAR_TO_UTF8(*file)<<".txt";
-	int mode = write?std::fstream::out:std::fstream::in;
-	(fH->handle).open(sb.str(), mode);
-	return fH;
+UFileHandler* UFileHandler::getFileHandler(UObject* owner){
+	return NewObject<UFileHandler>(owner);
 }
 
 void UFileHandler::BeginDestroy(){
 	Super::BeginDestroy();
 	close();
+}
+//UE_LOG(LogTemp, Warning, TEXT("Your message"));
+
+void UFileHandler::openFile(FString dir, FString file, bool write){
+	std::stringstream sb;
+	sb << TCHAR_TO_UTF8(*dir)<<TCHAR_TO_UTF8(*file);
+	
+	int mode;
+	if(write){
+		mode = std::fstream::out;
+	}else{
+		mode =  std::fstream::in;
+	}
+	FString t = UTF8_TO_TCHAR(sb.str().c_str());
+	//string t = sb.str();
+	UE_LOG(LogTemp, Warning, TEXT("%s"), UTF8_TO_TCHAR(sb.str().c_str()));
+	UE_LOG(LogTemp, Warning, TEXT("%s"),  UTF8_TO_TCHAR(strerror(errno)));
+	//UE_LOG(LogTemp, Warning, TEXT(sb.str()));
+	//UE_LOG(LogTemp, Warning, TEXT(strerror(errno)));
+	handle.open(sb.str(), mode);
+	//handle.open("C:/Users/praktikum/ue4test2.txt", mode);
 }
 
 bool UFileHandler::isOpen(){

@@ -23,13 +23,16 @@ public:
 	UFUNCTION(BlueprintCallable, Category="FileHandler")
 	static TArray<FString> GetAllFiles(const FString& baseDir, bool includeFiles, bool includeDirs);
 
-	UFUNCTION(BlueprintCallable, Category="FileHandler")
-	static UFileHandler* openFile(UObject* owner, FString dir, FString file, bool write);
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category="FileHandler")
+	static UFileHandler* getFileHandler(UObject* owner);
 	
 	virtual void BeginDestroy() override;
 
 	std::fstream handle;
 
+	UFUNCTION(BlueprintCallable, Category="FileHandler")
+	void openFile(FString dir, FString file, bool write);
+	
 	UFUNCTION(BlueprintCallable, Category="FileHandler")
 	bool isOpen();
 

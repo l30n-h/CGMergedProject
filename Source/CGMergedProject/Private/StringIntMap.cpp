@@ -3,7 +3,7 @@
 #include "CGMergedProject.h"
 #include "StringIntMap.h"
 
-UStringIntMap* UStringIntMap::openFile(UObject* owner){
+UStringIntMap* UStringIntMap::newMap(UObject* owner){
 	UStringIntMap *map = NewObject<UStringIntMap>(owner);
 	return map;
 }
