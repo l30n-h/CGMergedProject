@@ -3,7 +3,7 @@
 #pragma once
 #include "StringIntMap.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class CGMERGEDPROJECT_API UStringIntMap : public UObject
 {
 	GENERATED_BODY()
@@ -24,4 +24,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category="Map")
 	void putAll(TArray<FString> array);
+
+	UFUNCTION(BlueprintCallable, Category="Map")
+	void clear();
 };
