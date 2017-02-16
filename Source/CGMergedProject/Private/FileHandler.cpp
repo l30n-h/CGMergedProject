@@ -17,6 +17,10 @@ FString UFileHandler::getHomeDir(){
 	return UTF8_TO_TCHAR(sb.str().c_str());
 }
 
+FString UFileHandler::getProjectDir(){
+	return FPaths::ConvertRelativePathToFull(FPaths::GameDir());
+}
+
 TArray<FString> UFileHandler::GetAllLevels(FString folder){
 	auto ObjectLibrary = UObjectLibrary::CreateLibrary(UWorld::StaticClass(), false, true);
 	ObjectLibrary->LoadAssetDataFromPath(folder);

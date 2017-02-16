@@ -15,7 +15,10 @@ class CGMERGEDPROJECT_API UFileHandler : public UObject
 public:	
 
 	UFUNCTION(BlueprintCallable, Category="FileHandler")
-	static FString getHomeDir();	
+	static FString getHomeDir();
+
+	UFUNCTION(BlueprintCallable, Category="FileHandler")
+	static FString getProjectDir();
 
 	UFUNCTION(BlueprintCallable, Category="FileHandler")
 	static TArray<FString> GetAllLevels(FString folder);
