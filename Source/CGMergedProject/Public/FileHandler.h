@@ -26,6 +26,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category="FileHandler")
 	static TArray<FString> GetAllFiles(const FString& baseDir, bool includeFiles, bool includeDirs);
 
+	UFUNCTION(BlueprintCallable, Category="FileHandler")
+	static bool FileExists(const FString& InPath);
+
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category="FileHandler")
 	static UFileHandler* getFileHandler(UObject* owner);
 	

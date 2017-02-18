@@ -46,6 +46,10 @@ TArray<FString> UFileHandler::GetAllFiles(const FString& baseDir, bool includeFi
 	return files;
 }
 
+bool UFileHandler::FileExists(const FString& InPath){
+	return FPaths::FileExists(InPath);
+}
+
 UFileHandler* UFileHandler::getFileHandler(UObject* owner){
 	return NewObject<UFileHandler>(owner);
 }
