@@ -8370,6 +8370,7 @@ HEADERS += \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/JsonHandler.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/ObjectData.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/RecordData.h" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/RegexHandler.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/StringIntMap.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/TimeStepData.h" \
  

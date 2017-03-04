@@ -6234,6 +6234,7 @@ set(SOURCE_FILES
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/JsonHandler.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/ObjectData.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/RecordData.cpp"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/RegexHandler.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/StringIntMap.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/TimeStepData.cpp"
  )
@@ -14610,6 +14611,7 @@ set(HEADER_FILES
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/JsonHandler.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/ObjectData.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/RecordData.h"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/RegexHandler.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/StringIntMap.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/TimeStepData.h"
  )
