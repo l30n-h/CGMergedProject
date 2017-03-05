@@ -3,14 +3,8 @@
 #include "CGMergedProject.h"
 #include "RegexHandler.h"
 
-RegexHandler::RegexHandler()
-{
-}
-
-RegexHandler::~RegexHandler()
-{
-}
-
-FString RegexHandler::replace(const FString inString, const FString regex, const FString replacement){
-	return UTF8_TO_TCHAR("");
-}
+//FString URegexHandler::replace(const FString inString, const FString regex, const FString replacement){
+//	const FRegexPattern myPattern(TEXT("^[a-z,A-Z,0-9,\\-,_]+\\.[exe|dll]+"));
+//	FRegexMatcher myMatcher(myPattern, TEXT("ntldll.dll"));
+//	return UTF8_TO_TCHAR("");
+//}

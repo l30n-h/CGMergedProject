@@ -8,6 +8,6 @@ class CGMERGEDPROJECT_API URegexHandler: public UObject
 {
 	GENERATED_BODY()
 public:
-	UFUNCTION(BlueprintCallable, Category="Regex")
-	static FString replace(const FString inString, const FString regex, const FString replacement);
+	//UFUNCTION(BlueprintCallable, Category="Regex")
+	//static FString replace(const FString inString, const FString regex, const FString replacement);
 };
