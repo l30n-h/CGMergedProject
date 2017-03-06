@@ -16,8 +16,11 @@ public:
 
 	TMap<FString, int32> map;
 
-	UFUNCTION(BlueprintCallable, Category="Map")
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category="Map")
 	int32 get(FString key);
+	
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category="Map")
+	FString getKey(int32 value);
 
 	UFUNCTION(BlueprintCallable, Category="Map")
 	void put(FString key, int32 value);

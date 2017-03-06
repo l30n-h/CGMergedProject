@@ -17,6 +17,14 @@ int32 UStringIntMap::get(FString key){
 	return map.FindRef(key)-1;
 }
 
+FString UStringIntMap::getKey(int32 value){
+	const FString * key= map.FindKey(value+1);
+	if(key){
+		return *key;
+	}
+	return UTF8_TO_TCHAR("");
+}
+
 void UStringIntMap::put(FString key, int32 value){
 	map.Emplace(key, value+1);
 }
