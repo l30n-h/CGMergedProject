@@ -27,4 +27,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category="Map")
 	void clear();
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category="Map")
+	int32 size();
 };

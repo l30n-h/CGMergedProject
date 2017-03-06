@@ -30,3 +30,7 @@ void UStringIntMap::putAll(TArray<FString> array){
 void UStringIntMap::clear(){
 	map.Reset();
 }
+
+int32 UStringIntMap::size(){
+	return map.Num();
+}
