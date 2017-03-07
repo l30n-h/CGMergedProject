@@ -8,3 +8,8 @@
 //	FRegexMatcher myMatcher(myPattern, TEXT("ntldll.dll"));
 //	return UTF8_TO_TCHAR("");
 //}
+
+bool URegexHandler::loadTrainingData(const FString path){
+	struct svm_model *model = svm_load_model("path");
+	return true;
+}
