@@ -1,0 +1,5 @@
+[labels, instances] = libsvmread('C:\Users\praktikum\Documents\Unreal Projects\CGMergedProject\AufnahmenUE4\Features\Libsvm\all_features');
+[ulabels, uinstances] = make_unique(labels, instances)
+uinstances = scale_instances(uinstances)
+mds=compute_mds(uinstances)
+plot_mds(mds, ulabels)

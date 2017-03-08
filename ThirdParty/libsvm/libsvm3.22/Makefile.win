@@ -4,7 +4,7 @@
 #nmake -f Makefile.win
 
 ##########################################
-CXX = cl.exe
+CXX = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe"
 CFLAGS = /nologo /O2 /EHsc /I. /D _WIN64 /D _CRT_SECURE_NO_DEPRECATE
 TARGET = windows
 

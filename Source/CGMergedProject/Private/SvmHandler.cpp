@@ -3,11 +3,6 @@
 #include "CGMergedProject.h"
 #include "SvmHandler.h"
 
-//FString URegexHandler::replace(const FString inString, const FString regex, const FString replacement){
-//	const FRegexPattern myPattern(TEXT("^[a-z,A-Z,0-9,\\-,_]+\\.[exe|dll]+"));
-//	FRegexMatcher myMatcher(myPattern, TEXT("ntldll.dll"));
-//	return UTF8_TO_TCHAR("");
-//}
 
 void USvmHandler::BeginDestroy(){
 	Super::BeginDestroy();
@@ -29,10 +24,12 @@ void USvmHandler::close(){
 int32 USvmHandler::predict(const TArray<float> inFeature){
 	if(svmModel==NULL) return -1;
 	const int length = inFeature.Num();
-	svm_node* feature = new svm_node[length]; 
+	svm_node* feature = new svm_node[length+1]; 
 	for(int i=0;i<length;i++){
 		feature[i] = {i+1, inFeature[i]};
+		UE_LOG(LogTemp, Warning, TEXT("%f"),  inFeature[i]);
 	}
+	feature[length] = {-1, 0};
 	double label = svm_predict(svmModel, feature);
 	return (int32) label;
 }

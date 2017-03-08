@@ -38,8 +38,9 @@ public class CGMergedProject : ModuleRules
 		string libName = "";
 		if ((Target.Platform == UnrealTargetPlatform.Win64) || (Target.Platform == UnrealTargetPlatform.Win32)) {
 			isLibrarySupported = true;
-			libName = "libsvm.dll";
+			libName = "libsvm.lib";
 			//PublicDelayLoadDLLs.Add(Path.Combine(LibrariesPath, "libsvm.dll")); 
+			PublicAdditionalLibraries.Add(Path.Combine(LibrariesPath, "libsvm.lib"));
 		} else if(Target.Platform == UnrealTargetPlatform.Linux) {
 			isLibrarySupported = true;
 			libName = "libsvm.a";
