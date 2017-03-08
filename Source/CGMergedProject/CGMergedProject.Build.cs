@@ -34,21 +34,23 @@ public class CGMergedProject : ModuleRules
 
 	public bool LoadLibSVM(TargetInfo Target) {
 		bool isLibrarySupported = false;
-		
+		string LibrariesPath = Path.Combine(ThirdPartyPath, "libsvm", "libraries");
+		string libName = "";
 		if ((Target.Platform == UnrealTargetPlatform.Win64) || (Target.Platform == UnrealTargetPlatform.Win32)) {
 			isLibrarySupported = true;
-			string LibrariesPath = Path.Combine(ThirdPartyPath, "libsvm", "libraries");
-			PublicDelayLoadDLLs.Add(Path.Combine(LibrariesPath, "libsvm.dll")); 
+			libName = "libsvm.dll";
+			//PublicDelayLoadDLLs.Add(Path.Combine(LibrariesPath, "libsvm.dll")); 
 		} else if(Target.Platform == UnrealTargetPlatform.Linux) {
 			isLibrarySupported = true;
-			string LibrariesPath = Path.Combine(ThirdPartyPath, "libsvm", "libraries");
-			//PublicAdditionalLibraries.Add(Path.Combine(LibrariesPath, "libsvm.so.2"));
-			PublicDelayLoadDLLs.Add(Path.Combine(LibrariesPath, "libsvm.so.2"));
+			libName = "libsvm.a";
+			//PublicDelayLoadDLLs.Add(Path.Combine(LibrariesPath, "libsvm.so.2"));
+			PublicAdditionalLibraries.Add(Path.Combine(LibrariesPath, "libsvm.a"));
 		}
 
 		if (isLibrarySupported) {
-			// Include path
 			PublicIncludePaths.Add(Path.Combine(ThirdPartyPath, "libsvm", "includes"));
+			//PublicLibraryPaths.Add(LibrariesPath);
+			//PublicAdditionalLibraries.Add(libName);
 		}
 
 		Definitions.Add(string.Format( "WITH_LIBSVM_BINDING={0}", isLibrarySupported ? 1 : 0 ) );
