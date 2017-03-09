@@ -17,7 +17,7 @@ int32 UIntStringMap::getKey(FString value){
 	if(key){
 		return *key;
 	}
-	return 0;
+	return -1;
 }
 
 void UIntStringMap::put(int32 key, FString value){
