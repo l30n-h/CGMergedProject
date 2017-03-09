@@ -3384,6 +3384,7 @@
     <Include Path="/home/leon/Downloads/UnrealEngine-4.14.1-release/Engine/Intermediate/Build/Linux/B4D820EA/BootstrapPackagedGame/Inc/BootstrapPackagedGame" />
     <Include Path="/home/leon/Downloads/UnrealEngine-4.14.1-release/Engine/Source/Programs/Windows/BootstrapPackagedGame" />
     <Include Path="/home/leon/Downloads/UnrealEngine-4.14.1-release/Engine/Source" />
+    <Include Path="/home/leon/Dokumente/Unreal Projects/CGMergedProject/ThirdParty/libsvm/includes" />
     <Include Path="/home/leon/Dokumente/Unreal Projects/CGMergedProject/Source" />
     <Include Path="/home/leon/Dokumente/Unreal Projects/CGMergedProject/Source/CGMergedProject/Public" />
     <Include Path="/home/leon/Dokumente/Unreal Projects/CGMergedProject/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/CGMergedProject" />

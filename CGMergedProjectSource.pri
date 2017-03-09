@@ -6219,12 +6219,16 @@ SOURCES += \
 	"$$unrealRootPath/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/CompareScreenshotsCommandlet.cpp" \
 	"$$unrealRootPath/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/ScreenshotTools.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/CGMergedProject.cpp" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/Feature.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/FileHandler.cpp" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/IntStringMap.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/JsonHandler.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/ObjectData.cpp" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/PlaybackInfo.cpp" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/PlaybackSettings.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/RecordData.cpp" \
-	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/SvmHandler.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/StringIntMap.cpp" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/SvmHandler.cpp" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Private/TimeStepData.cpp" \
  
 

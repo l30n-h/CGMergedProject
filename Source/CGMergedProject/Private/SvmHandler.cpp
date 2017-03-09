@@ -27,7 +27,6 @@ int32 USvmHandler::predict(const TArray<float> inFeature){
 	svm_node* feature = new svm_node[length+1]; 
 	for(int i=0;i<length;i++){
 		feature[i] = {i+1, inFeature[i]};
-		UE_LOG(LogTemp, Warning, TEXT("%f"),  inFeature[i]);
 	}
 	feature[length] = {-1, 0};
 	double label = svm_predict(svmModel, feature);

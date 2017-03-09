@@ -6230,12 +6230,16 @@ set(SOURCE_FILES
 	"${UE4_ROOT_PATH}/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/CompareScreenshotsCommandlet.cpp"
 	"${UE4_ROOT_PATH}/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/ScreenshotTools.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/CGMergedProject.cpp"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/Feature.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/FileHandler.cpp"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/IntStringMap.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/JsonHandler.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/ObjectData.cpp"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/PlaybackInfo.cpp"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/PlaybackSettings.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/RecordData.cpp"
-	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/SvmHandler.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/StringIntMap.cpp"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/SvmHandler.cpp"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Private/TimeStepData.cpp"
  )
 
@@ -14607,12 +14611,16 @@ set(HEADER_FILES
 	"${UE4_ROOT_PATH}/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/ScreenshotToolsPrivatePCH.h"
 	"${UE4_ROOT_PATH}/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Public/ScreenshotTools.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/CGMergedProject.h"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/Feature.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/FileHandler.h"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/IntStringMap.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/JsonHandler.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/ObjectData.h"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/PlaybackInfo.h"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/PlaybackSettings.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/RecordData.h"
-	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/SvmHandler.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/StringIntMap.h"
+	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/SvmHandler.h"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public/TimeStepData.h"
  )
 
@@ -18496,6 +18504,7 @@ include_directories(
 	"${UE4_ROOT_PATH}/Engine/Intermediate/Build/Linux/B4D820EA/BootstrapPackagedGame/Inc/BootstrapPackagedGame"
 	"${UE4_ROOT_PATH}/Engine/Source/Programs/Windows/BootstrapPackagedGame"
 	"${UE4_ROOT_PATH}/Engine/Source"
+	"${GAME_ROOT_PATH}/ThirdParty/libsvm/includes"
 	"${GAME_ROOT_PATH}/Source"
 	"${GAME_ROOT_PATH}/Source/CGMergedProject/Public"
 	"${GAME_ROOT_PATH}/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/CGMergedProject"
@@ -19263,6 +19272,7 @@ add_definitions(
 	-DUNREALPAK_API=
 	-DUNREALVERSIONSELECTOR_API=
 	-DBOOTSTRAPPACKAGEDGAME_API=
+	-DWITH_LIBSVM_BINDING=1
 	-DDEPRECATED_FORGAME=DEPRECATED
 	-DCGMERGEDPROJECT_API=
  )

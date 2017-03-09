@@ -8366,12 +8366,16 @@ HEADERS += \
 	"$$unrealRootPath/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/ScreenshotToolsPrivatePCH.h" \
 	"$$unrealRootPath/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Public/ScreenshotTools.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/CGMergedProject.h" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/Feature.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/FileHandler.h" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/IntStringMap.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/JsonHandler.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/ObjectData.h" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/PlaybackInfo.h" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/PlaybackSettings.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/RecordData.h" \
-	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/SvmHandler.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/StringIntMap.h" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/SvmHandler.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/TimeStepData.h" \
  
 

@@ -4,7 +4,7 @@
 #include "svm.h"
 #include "SvmHandler.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class CGMERGEDPROJECT_API USvmHandler: public UObject
 {
 	GENERATED_BODY()
