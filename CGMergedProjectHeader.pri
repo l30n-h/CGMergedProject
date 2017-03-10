@@ -8366,6 +8366,7 @@ HEADERS += \
 	"$$unrealRootPath/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/ScreenshotToolsPrivatePCH.h" \
 	"$$unrealRootPath/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Public/ScreenshotTools.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/CGMergedProject.h" \
+	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/CalibrationData.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/Feature.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/FileHandler.h" \
 	"$$CGMergedProjectRootPath/Source/CGMergedProject/Public/IntStringMap.h" \
