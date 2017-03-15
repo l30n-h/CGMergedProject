@@ -1,4 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\end{abstract}
 
 \section{Einführung}
 
@@ -27,7 +30,7 @@ Für die Umsetzung haben wir ein Framework erstellt, das auf der Unreal Engine 4
 Für die Interaktion mit den virtuellen Szenen verwenden wir das VR-System HTC Vive. Zu dessen Umfang gehört ein Head-Mounted Display (HMD), zwei Controller und zwei Infarotsensoren. Diese sogenannten Basisstationen werden am Rand des zuvor festgelegten Feldes auf gegenüberliegenden Seiten aufgestellt und berechnen die Positionen und Orientierungen des HMDs, bzw. des Kopfs und der Controller bzw. den Händen. In diesem Feld kann sich der Benutzer frei bewegen und die Szenen durchlaufen. Um größere Distanzen zu überbrücken haben wir die Szenen so angepasst, dass man sich zu jeder Stelle teleportieren kann. Die HTC Vive bietet dank des Trackings von Kopf und Händen und der freien Bewegung im Raum schon eine gute Flexibilität, allerdings sind von den Posen des Nutzers so auch ohne Weiteres nur diese Positionen bekannt. Das Erkennen aller Gelenke wie in \cite{SceneGronk} ist so nicht möglich. \cite{FutureWork}
 
 \subsection{Szenen}
-Die Szenen werden mit U
+Jede Szene wird als eigenstädiges Level erstellt und im Order "Level" gespeichert. Alle Level aus diesem Ordner werden später in der Anwendung aufgelistet.  
 
 \subsection{Kalibrierung}
 Damit die ausgeführten Aktionen unabhängig von der Statur des Benutzers bleiben, wird vor der Aufnahme und Klassifizerung dessen Größe und Armlänge ermittelt. Dafür wird bei aufrechtem Stand und ausgestreckten Armen die Höhe des HMDs und dessen Abstand zu den Controllern gemessen. Diese Informationen werden mit jeder Aufnahme gespeichert und der Merkmalsberechnung zur Verfügung gestellt. 
@@ -35,7 +38,7 @@ Damit die ausgeführten Aktionen unabhängig von der Statur des Benutzers bleibe
 \subsection{Aktionsaufnahme und Wiedergabe}
 Der Benutzer startet die Aufnahme in einer Szene seiner Wahl und führt die gewünschte Aktion aus. Währendessen wird in regelmäßigen Abständen die aktuelle Position und Orientierung des HMDs, der Controller und jedes Szenenelements mitgeschrieben. Diese Informationen werden als Jsondokument gespeichert und können so auch leicht für andere Zwecke verwendet werden. Um gleiche Aktionen später gruppieren zu können, müssen deren Aufnahmen gleich benannt werden und dürfen sich im Namen nur um Zahlen unterscheiden.\newline
 \begin{figure}[hbtp]
-\includegraphics[height=0.3\textheight]{PlaybackActor.png}
+\includegraphics[width=1.0\linewidth]{PlaybackActor2.png}
 \caption{Wiedergabe}
 \label{fig:PlaybackActor}
 \end{figure}
@@ -44,7 +47,7 @@ Bei der Wiedergabe werden das HMD und die Controller durch Modelle von Kopf und 
 \subsection{Mermalsvektoren erstellen}
 Welche Merkmale verwendet werden sollen wird im Quelltext angegeben. Die Unreal Engine bietet mit den sogenannten Blueprints eine graphenbasierte Alternative zur C++-Programierung an \cite{Blueprints}. Die von uns erstellte Blueprintfunktion "logFeatures" hat als Inputparameter die Kalibrierungsdaten, alle Informationen zu Kopf und Händen und einen Array mit den Featurevektoren, an den jeder neu Berechnete angehangen wird. Ein kurzes Beispiel ist in Abbildung \ref{fig:LogFeatures} zu sehen. Dort werden als Merkmale die Höhe des Kopfes und dessen Abstände zu den beiden Händen berechnet. Die von uns verwendeten Mermale werden in \cite{Features} genauer beschrieben. 
 \begin{figure}[hbtp]
-\includegraphics[width=1\linewidth]{LogFeatures2.png}
+\includegraphics[width=1.0\linewidth]{LogFeatures2.png}
 \caption{Merkalsvektoren im Blueprint erstellen}
 \label{fig:LogFeatures}
 \end{figure}
