@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: pg.aux
+The style file: alpha.bst
+Database file #1: literature.bib
+Warning--I didn't find a database entry for "ochmann-2014"
+Warning--I didn't find a database entry for "htc-vive"
+Warning--I didn't find a database entry for "ue4"
+Warning--I didn't find a database entry for "ue4-blueprints"
+You've used 4 entries,
+            2543 wiz_defined-function locations,
+            592 strings with 5368 characters,
+and the built_in function-call counts, 1961 in all, are:
+= -- 193
+> -- 116
+< -- 0
++ -- 43
+- -- 43
+* -- 165
+:= -- 340
+add.period$ -- 14
+call.type$ -- 4
+change.case$ -- 31
+chr.to.int$ -- 4
+cite$ -- 4
+duplicate$ -- 59
+empty$ -- 127
+format.name$ -- 46
+if$ -- 380
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 4
+newline$ -- 26
+num.names$ -- 12
+pop$ -- 23
+preamble$ -- 1
+purify$ -- 35
+quote$ -- 0
+skip$ -- 47
+stack$ -- 0
+substring$ -- 124
+swap$ -- 5
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 32
+warning$ -- 0
+while$ -- 18
+width$ -- 6
+write$ -- 58
+(There were 4 warnings)
