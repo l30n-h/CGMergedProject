@@ -3,9 +3,10 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: pg.aux
 The style file: alpha.bst
 Database file #1: literature.bib
+Warning--I didn't find a database entry for "gibson"
 You've used 4 entries,
             2543 wiz_defined-function locations,
-            585 strings with 5053 characters,
+            586 strings with 5059 characters,
 and the built_in function-call counts, 1587 in all, are:
 = -- 160
 > -- 70
@@ -44,3 +45,4 @@ warning$ -- 0
 while$ -- 14
 width$ -- 6
 write$ -- 59
+(There was 1 warning)
