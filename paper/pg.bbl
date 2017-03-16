@@ -1,5 +1,5 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
-\begin{thebibliography}{OVWK16}
+\begin{thebibliography}{SCH{\etalchar{+}}14}
 
 \bibitem[CL11]{libsvm}
 Chih-Chung Chang and Chih-Jen Lin.
@@ -8,24 +8,22 @@ Chih-Chung Chang and Chih-Jen Lin.
   2:27:1--27:27, 2011.
 \newblock Software available at \url{http://www.csie.ntu.edu.tw/~cjlin/libsvm}.
 
-\bibitem[OVWK14]{ochmann-2014-towards}
-Sebastian Ochmann, Richard Vock, Raoul Wessel, and Reinhard Klein.
-\newblock Towards the extraction of hierarchical building descriptions from 3d
-  indoor scans.
-\newblock In {\em EUROGRAPHICS Workshop on 3D Object Retrieval (3DOR 2014)},
-  April 2014.
-
-\bibitem[OVWK16]{Ochmann-2015-Automatic}
-Sebastian Ochmann, Richard Vock, Raoul Wessel, and Reinhard Klein.
-\newblock Automatic reconstruction of parametric building models from indoor
-  point clouds.
-\newblock {\em Computers {\&} Graphics}, 54:94--103, February 2016.
-\newblock Special Issue on CAD/Graphics 2015.
+\bibitem[Gam17]{ue4}
+Epic Games.
+\newblock Unreal engine.
+\newblock Website, 2017.
+\newblock \url{https://www.unrealengine.com/}; abgerufen am 16. März 2017.
 
 \bibitem[SCH{\etalchar{+}}14]{scene-grok}
 Manolis Savva, Angel~X. Chang, Pat Hanrahan, Matthew Fisher, and Matthias
   Nießner.
 \newblock Scenegrok: Inferring action maps in 3d environments.
 \newblock {\em ACM Trans. Graph.}, 33(6):212:1--212:10, November 2014.
+
+\bibitem[Viv17]{htc-vive}
+Vive.
+\newblock Htc vive.
+\newblock Website, 2017.
+\newblock \url{https://www.vive.com/de/}; abgerufen am 16. März 2017.
 
 \end{thebibliography}
