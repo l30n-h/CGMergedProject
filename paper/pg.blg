@@ -4,45 +4,45 @@ The top-level auxiliary file: pg.aux
 The style file: alpha.bst
 Database file #1: literature.bib
 Warning--I didn't find a database entry for "gibson"
-You've used 4 entries,
+You've used 5 entries,
             2543 wiz_defined-function locations,
-            586 strings with 5059 characters,
-and the built_in function-call counts, 1587 in all, are:
-= -- 160
-> -- 70
-< -- 2
-+ -- 23
-- -- 23
-* -- 112
-:= -- 269
-add.period$ -- 15
-call.type$ -- 4
-change.case$ -- 25
-chr.to.int$ -- 4
-cite$ -- 4
-duplicate$ -- 50
-empty$ -- 118
+            589 strings with 5280 characters,
+and the built_in function-call counts, 1652 in all, are:
+= -- 166
+> -- 67
+< -- 4
++ -- 21
+- -- 21
+* -- 102
+:= -- 285
+add.period$ -- 19
+call.type$ -- 5
+change.case$ -- 29
+chr.to.int$ -- 5
+cite$ -- 5
+duplicate$ -- 60
+empty$ -- 122
 format.name$ -- 28
-if$ -- 318
+if$ -- 329
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 2
-newline$ -- 27
-num.names$ -- 12
-pop$ -- 26
+missing$ -- 1
+newline$ -- 33
+num.names$ -- 15
+pop$ -- 35
 preamble$ -- 1
-purify$ -- 29
+purify$ -- 34
 quote$ -- 0
-skip$ -- 43
+skip$ -- 46
 stack$ -- 0
-substring$ -- 102
-swap$ -- 4
-text.length$ -- 2
-text.prefix$ -- 2
+substring$ -- 75
+swap$ -- 5
+text.length$ -- 4
+text.prefix$ -- 3
 top$ -- 0
-type$ -- 32
+type$ -- 40
 warning$ -- 0
-while$ -- 14
-width$ -- 6
-write$ -- 59
+while$ -- 13
+width$ -- 7
+write$ -- 71
 (There was 1 warning)

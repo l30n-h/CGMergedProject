@@ -1,18 +1,27 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
 \begin{thebibliography}{SCH{\etalchar{+}}14}
 
-\bibitem[CL11]{libsvm}
-Chih-Chung Chang and Chih-Jen Lin.
-\newblock {LIBSVM}: A library for support vector machines.
-\newblock {\em ACM Transactions on Intelligent Systems and Technology},
-  2:27:1--27:27, 2011.
-\newblock Software available at \url{http://www.csie.ntu.edu.tw/~cjlin/libsvm}.
-
-\bibitem[Gam17]{ue4}
-Epic Games.
-\newblock Unreal engine.
+\bibitem[EG17]{ue4}
+{E}pic {G}ames.
+\newblock {U}nreal {E}ngine.
 \newblock Website, 2017.
 \newblock \url{https://www.unrealengine.com/}; abgerufen am 16. März 2017.
+
+\bibitem[Lä06]{laechele-svm}
+Johannes Lächele.
+\newblock Support vector machines.
+\newblock Proseminararbeit an der Universität Tübingen, July 2006.
+\newblock Online erhältlich unter
+  \url{http://www.ra.cs.uni-tuebingen.de/lehre/ss06/pro_learning/JohannesLaechele.pdf};
+  abgerufen am 17 März 2017.
+
+\bibitem[Say]{sayad-svm}
+Dr.~Sead Sayad.
+\newblock Support vector machines.
+\newblock Vorlesungsskript an der Universität Toronto.
+\newblock Online erhältlich unter
+  \url{http://chem-eng.utoronto.ca/~datamining/Presentations/SVM.pdf};
+  abgerufen am 17 März 2017.
 
 \bibitem[SCH{\etalchar{+}}14]{scene-grok}
 Manolis Savva, Angel~X. Chang, Pat Hanrahan, Matthew Fisher, and Matthias
@@ -20,9 +29,9 @@ Manolis Savva, Angel~X. Chang, Pat Hanrahan, Matthew Fisher, and Matthias
 \newblock Scenegrok: Inferring action maps in 3d environments.
 \newblock {\em ACM Trans. Graph.}, 33(6):212:1--212:10, November 2014.
 
-\bibitem[Viv17]{htc-vive}
-Vive.
-\newblock Htc vive.
+\bibitem[{V}iv17]{htc-vive}
+{V}ive.
+\newblock {H}{T}{C} {V}ive.
 \newblock Website, 2017.
 \newblock \url{https://www.vive.com/de/}; abgerufen am 16. März 2017.
 
