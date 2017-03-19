@@ -2,7 +2,10 @@
 
 \section{Einführung}
 
-Ein wesentlicher Bestandteil künstlicher Intelligenz ist die Erkennung und die daraus geschlussfolgerte Voraussage von menschlichem Verhalten. Unsere Arbeit ist der Versuch in Virtual Reality (VR) eine Live-Klassifizierung von menschlichem Verhalten zu ermöglichen.
+Ein wesentlicher Bestandteil künstlicher Intelligenz ist die Erkennung und die daraus geschlussfolgerte Voraussage von menschlichem Verhalten. Unsere Arbeit ist der Versuch in Virtual Reality (VR) eine Live-Klassifizierung von menschlichem Verhalten zu ermöglichen.\newline
+Das Erkennen und Voraussagen von Verhalten ist auf vielfältiger Weise nützlich: Im Bereich der Sicherheit kann die Voraussage dem frühzeitigen Erkennen von Gefahren dienen. So könnte zum Beispiel ein bewaffneter Überfall über eine Überwachungskamera erkannt werden und automatisch einen stillen Alarm auslösen. Ebenso kann in der Dienstleistungsbranche die Erkennung von menschlichen Bedürfnissen ein großer Schritt vorwärts sein und viele Angebote voll automatisieren. Auch weitere Anwendungsgebiete sind denkbar. Wir haben in dieser Ausarbeitung den Fokus jedoch auf die Erkennung von menschlichen Interaktionen in einer virtuellen Umgebung gelegt.\newline
+Virtual Reality ist ein schnell wachsender Zweig der aktuellen Forschung, der vielversprechende Einsatzmöglichkeiten verspricht. Sei es in der Medizin, in der Unterhaltungsbranche oder als Werkzeug für die Gestaltung von Prototypen. Virtual Reality wird in den kommenden Jahren viele Neuerungen mit sich bringen. Unser Ziel war es nun die Vorteile einer virtuellen Umgebung (namentlich: das Wegfallen des Virtualisierungsvorgangs) mit dem aktuellen Forschungsstand auf dem Gebiet der Aktionserkennung zu verknüpfen und eine Echtzeit-Aktionsklassifizierung zu ermöglichen, die möglichst verlässlich das Verhalten von menschlichen Aktoren in VR erkennt und auf dessen Basis in der Lage ist autonome Entscheidungen zu treffen. Für diese Aktionsklassifikation haben wir und ein Framework erstellt, das auf der Unreal Engine 4.14 aufgebaut ist und eine HTC Vive als VR-System nutzt. Wir werden Aktionen aufnehmen und aus diesen Merkmalsvektoren bilden. Die Aktionen werden anhand dieser Merkmalsvektoren von der Support-Vector-Machine libsvm erlernt und anschließend klassifiziert.\newline
+Im Folgenden werden wir zunächst kurz auf verwandte Arbeiten in diesem Bereich verweisen. Anschließend beschreiben wir in Abschnitt \ref{sec:framework} das von uns erstellte Framework. In Abschnitt \ref{sec:support-vector-machine-svm} gehen wir dann genauer auf die Support-Vector-Machine und die von uns gewählten Merkmale ein. Einschränkungen, die uns während unserer Arbeit aufgefallen sind, werden in Abschnitt \ref{sec:limitation} behandelt. Zum Schluss betrachten wir in \ref{diskussion-ausblick} noch weitere Verbesserungsmöglichkeiten an unserer Arbeit.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -23,7 +26,7 @@ Im Gegensatz zu der Forschung aus Stanford ist das Augenmerk bei unserer Arbeit 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Das Framework}
-
+\label{sec:framework}
 Für die Klassifikation arbeiten wir im Gegensatz zu \cite{scene-grok} nicht in realen Umgebungen, sondern verwenden virtuellen Szenen, in denen wir uns mit einer HTC Vive \cite{htc-vive} bewegen und den Szenenobjekten interagieren können. Dadurch können wir nicht nur einfacher verschiedene Umgebungen simulieren, sondern haben so auch die Möglichkeit mehr Informationen zu den Szenen und deren Objekten zu erhalten.
 Für die Umsetzung haben wir ein Framework erstellt, das auf der Unreal Engine 4.14 \cite{ue4} aufbaut. Die Unreal Engine stellt die grundsätzlichen Funktionen, wie das Erstellen von Szenen und die Anbindung an die HTC Vive zur Verfügung. Das Framework erweitert die Funktionalität noch um das Aufnehmen und Abspielen von Aktionen, das Erstellen der Merkmalsvektoren aus diesen Aktionen (siehe Abschnitt \ref{subsec:auswahl-der-feature-vektoren}) und der direkten Klassifizierung von neuen Aktionen.
 
@@ -70,7 +73,7 @@ Bei der Live Klassifizierung werden vom Benutzer Aktionen ausgeführt und daraus
 
 \subsection{Einführung}
 \label{subsec:einfuehrung}
-Eine Support Vector Machine führt eine Klassifikation von Objekten anhand von bereits klassifizierten Objekten aus. Die Objekte werden als n-dimensionale Vektoren $v$ im Objektraum $X \subseteq \mathbb{R}^{n} $ dargestellt, bei denen je ein Wert ein bestimmtes Merkmal (hier Feature) des Objektes darstellt. Zur Klassifizierung wird der Objektraum durch Hyperebenen so geteilt, dass jede Klasse von den anderen getrennt ist. Das heißt es erfolgt eine Zuordnung des Objektraumes $X$ zum Ergebnisraum $Y = {1,...,m} \subseteq \mathbb{R}$, der alle Klassen beinhaltet. Zur Berechnung dieser Hyperebenen dienen die Trainingsdaten $T =((x_{1},y_{1}),...,(x_{l},y_{l})) \subseteq (X \times Y)$, die der SVM übergeben werden. Somit besteht jedes Trainingsset aus einem Objekt $x_{i} \in X$ und der dazugehörigen Klasse $y_{i} \in Y$. Die Hyperebenen werden so gewählt, dass der mögliche Unterschied innerhalb einer Klasse möglichst groß ist. Dies wird dadurch realisiert, dass die Abstände der Vektoren, die der Hyperebene am Nächsten liegen maximiert werden (Maximum Margin). Diese der Hyperebene am nächsten liegenden Vektoren werden Support-Vectors genannt, da durch diese die optimale Hyperebene \glqq{}stabilisiert\grqq{} wird. Jedoch lassen sich nicht alle Datenpunkte durch Hyperebenen trennen, da es Ausreißer geben kann und Klassen sich teilweise sogar überschneiden. Um diese Daten zu klassifizieren, bedient sich die SVM des Kerneltricks. \cite{laechele-svm}
+Eine Support Vector Machine führt eine Klassifikation von Objekten anhand von bereits klassifizierten Objekten aus. Die Objekte werden als n-dimensionale Vektoren $v$ im Objektraum $X \subseteq \mathbb{R}^{n} $ dargestellt, bei denen je ein Wert ein bestimmtes Merkmal (hier Feature) des Objektes darstellt. Zur Klassifizierung wird der Objektraum durch Hyperebenen so geteilt, dass jede Klasse von den anderen getrennt ist. Das heißt es erfolgt eine Zuordnung des Objektraumes $X$ zum Ergebnisraum $Y = {1,...,m} \subseteq \mathbb{R}$, der alle Klassen beinhaltet. Zur Berechnung dieser Hyperebenen dienen die Trainingsdaten $T =((x_{1},y_{1}),...,(x_{l},y_{l})) \subseteq (X \times Y)$, die der SVM übergeben werden. Somit besteht jedes Trainingsset aus einem Objekt $x_{i} \in X$ und der dazugehörigen Klasse $y_{i} \in Y$. Die Hyperebenen werden so gewählt, dass der mögliche Unterschied innerhalb einer Klasse möglichst groß ist. Dies wird dadurch realisiert, dass die Abstände der Vektoren, die der Hyperebene am Nächsten liegen maximiert werden (Maximum Margin). Diese der Hyperebene am nächsten gelegenen Vektoren werden \glqq{}Support-Vectors\grqq{} genannt, da durch diese die optimale Hyperebene \glqq{}stabilisiert\grqq{} wird. Jedoch lassen sich nicht alle Datenpunkte durch Hyperebenen trennen, da es Ausreißer geben kann und Klassen sich teilweise sogar überschneiden. Um diese Daten zu klassifizieren, bedient sich die SVM des Kerneltricks. \cite{laechele-svm}
 
 \subsection{Lineare Klassifikation}
 \label{subsec:lineare-klassifikation}
@@ -83,7 +86,7 @@ Eingabevektoren, die sich auf diese Weise trennen lassen, werden linear separabe
 \begin{figure}[hbtp]
 \includegraphics[width=0.7\linewidth]{LinSeparabel.png}
 \centering
-\caption{Beispiel für linear separierbare Eingabevektoren. Die Vektoren werden mit Hilfe von h(x) in 2 Klassen überhalb (positiv bzw. grün) und unterhalb (negativ bzw. rot) der Geraden eingeteilt. $\omega$ bestimmt hierbei die Steigung der Geraden, während $b$ sie parallel verschiebt.}
+\caption{Beispiel für linear separierbare Eingabevektoren. Die Vektoren werden mit Hilfe von h(x) in zwei Klassen überhalb (positiv bzw. grün) und unterhalb (negativ bzw. rot) der Geraden eingeteilt. $\omega$ bestimmt hierbei die Steigung der Geraden, während $b$ sie parallel verschiebt.}
 \label{fig:LinSeparabel}
 \end{figure}\ \\
 Eine lineare Klassifikation, deren Ausgaberaum mehr als 2-dimensional ist $(Y = /{1,...,n/}$, lässt sich durch $n$ binäre Klassifikationen simulieren. Hierbei wird für jede Klasse eine binäre Klassifikation durchgeführt und dann die Eingabe $x$ der Klasse zugeordnet, deren Hyperebene am weitesten entfernt ist.\\ \\
@@ -92,7 +95,7 @@ Um die optimale Hyperebene zu einer binären Klassifikation mittels \glqq{}Maxim
 \[ \gamma_{i} = y_{i}(\langle \omega \cdot x_{i} \rangle + b )\]
 Des weiteren ist der Abstand einer Hyperebene $\gamma$ zu mehreren Trainingsdaten das Minimum über alle $\gamma_{i}$.
 \[\gamma = min_{i\leq l} \gamma_{i}\]
-Die optimale Hyperebene ist nun diejenige, deren Margin zu dem Trainingsset maximal ist. Hierzu werden 2 zu der Hyperebene parallele Ebenen mit dem Abstand $\gamma$ definiert. Die Vektoren, die $\gamma$ beschränken, deren Abstand zur Hyperebene minimal ist, sind die \glqq{}Support-Vectors\grqq{}. Damit lässt sich der $\gamma$ über den Normalenvektor der Hyperebene berechnen:
+Die optimale Hyperebene ist nun diejenige, deren Margin zu dem Trainingsset maximal ist. Hierzu werden zwei zu der Hyperebene parallele Ebenen mit dem Abstand $\gamma$ definiert. Die Vektoren, die $\gamma$ beschränken, deren Abstand zur Hyperebene minimal ist, sind die \glqq{}Support-Vectors\grqq{}. Damit lässt sich der $\gamma$ über den Normalenvektor der Hyperebene berechnen:
 \[\gamma = \frac{1}{\lVert \omega \rVert_{2}} \]
 Damit ergibt sich folgendes Optimierungsproblem:\\
 
@@ -196,6 +199,7 @@ Wie im Abschniit \ref{subsec:auswahl-der-feature-vektoren} beschrieben, verwende
 Aufgrund der Ähnlichkeit fällt in diesen Fällen die Masse des nächsten Gegenstandes stärker ins Gewicht. Haben dann die Szenenobjekte ähnliche Massen, wie die Getränkeflasche und der Basketball, kann das zu Fehlklassifizierungen führen. Wird zum Beispiel im Stehen aus einer Flasche getrunken, so kann die Aktion fälschlicherweise als \glqq{}Basketball spielen\grqq{} klassifiziert werden. 
 
 \section{Diskussion und Ausblick}
+\label{diskussion-ausblick}
 Wir haben eine Methode zur Erforschung von Aktionen vom Menschen in virtueller Realität vorgestellt. Diese Methode bildet Merkmalsvektoren aus der Pose eines Menschen und den Eigenschaften der Gegenstände aus der Szene und verwendet dabei eine SVM als Klassifizierer. Um die Pose der durchführenden Person darzustellen, wurden die Kopfhöhe und die Abstände von den Händen zum Kopf genutzt und unter Berücksichtigung der Körpermaße des Nutzers kalibriert. 
 
 
