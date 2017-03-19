@@ -1,11 +1,34 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
-\begin{thebibliography}{SCH{\etalchar{+}}14}
+\begin{thebibliography}{MLBSV08}
 
 \bibitem[EG17]{ue4}
 {E}pic {G}ames.
 \newblock {U}nreal {E}ngine.
 \newblock Website, 2017.
 \newblock \url{https://www.unrealengine.com/}; abgerufen am 16. März 2017.
+
+\bibitem[FPB{\etalchar{+}}06]{fritz}
+G.~Fritz, L.~Paletta, R.~Breithaupt, E.~Rome, and G.~Dorffner.
+\newblock Learning predictive features in affordance based robotic perception
+  systems.
+\newblock In {\em 2006 IEEE/RSJ International Conference on Intelligent Robots
+  and Systems}, pages 3642--3647, Oct 2006.
+
+\bibitem[J77]{gibson}
+Gibson~J J.
+\newblock {\em {\textquotedblleft}The theory of
+  affordances,{\textquotedblright} in Perceiving, Acting, and Knowing. Towards
+  an Ecological Psychology.}
+\newblock Number eds Shaw R., Bransford J. Hoboken, NJ: John Wiley \& Sons
+  Inc., 1977.
+
+\bibitem[JYF16]{body-reconstruction}
+Fan Jiang, Xubo Yang, and Lele Feng.
+\newblock Real-time full-body motion reconstruction and recognition for
+  off-the-shelf vr devices.
+\newblock In {\em Proceedings of the 15th ACM SIGGRAPH Conference on
+  Virtual-Reality Continuum and Its Applications in Industry - Volume 1}, VRCAI
+  '16, pages 309--318, New York, NY, USA, 2016. ACM.
 
 \bibitem[Lä06]{laechele-svm}
 Johannes Lächele.
@@ -14,6 +37,12 @@ Johannes Lächele.
 \newblock Online erhältlich unter
   \url{http://www.ra.cs.uni-tuebingen.de/lehre/ss06/pro_learning/JohannesLaechele.pdf};
   abgerufen am 17 März 2017.
+
+\bibitem[MLBSV08]{montesano}
+L.~Montesano, M.~Lopes, A.~Bernardino, and J.~Santos-Victor.
+\newblock Learning object affordances: From sensory--motor coordination to
+  imitation.
+\newblock {\em IEEE Transactions on Robotics}, 24(1):15--26, Feb 2008.
 
 \bibitem[Say]{sayad-svm}
 Dr.~Sead Sayad.
@@ -28,6 +57,18 @@ Manolis Savva, Angel~X. Chang, Pat Hanrahan, Matthew Fisher, and Matthias
   Nießner.
 \newblock Scenegrok: Inferring action maps in 3d environments.
 \newblock {\em ACM Trans. Graph.}, 33(6):212:1--212:10, November 2014.
+
+\bibitem[SLZ{\etalchar{+}}08]{stark}
+Michael Stark, Philipp Lies, Michael Zillich, Jeremy Wyatt, and Bernt Schiele.
+\newblock {\em Functional Object Class Detection Based on Learned Affordance
+  Cues}, pages 435--444.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2008.
+
+\bibitem[SMBR10]{sun}
+Jie Sun, Joshua~L. Moore, Aaron Bobick, and James~M. Rehg.
+\newblock Learning visual object categories for robot affordance prediction.
+\newblock {\em The International Journal of Robotics Research},
+  29(2-3):174--197, 2010.
 
 \bibitem[{V}iv17]{htc-vive}
 {V}ive.
