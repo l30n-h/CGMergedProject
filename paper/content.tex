@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Einführung}
+\section{Einführung \tiny{(Can Tosun)}}
 
 Ein wesentlicher Bestandteil künstlicher Intelligenz ist die Erkennung und die daraus geschlussfolgerte Voraussage von menschlichem Verhalten. Unsere Arbeit ist der Versuch in Virtual Reality (VR) eine Live-Klassifizierung von menschlichem Verhalten zu ermöglichen.\newline
 Das Erkennen und Voraussagen von Verhalten ist auf vielfältiger Weise nützlich: Im Bereich der Sicherheit kann die Voraussage dem frühzeitigen Erkennen von Gefahren dienen. So könnte zum Beispiel ein bewaffneter Überfall über eine Überwachungskamera erkannt werden und automatisch einen stillen Alarm auslösen. Ebenso kann in der Dienstleistungsbranche die Erkennung von menschlichen Bedürfnissen ein großer Schritt vorwärts sein und viele Angebote voll automatisieren. Auch weitere Anwendungsgebiete sind denkbar. Wir haben in dieser Ausarbeitung den Fokus jedoch auf die Erkennung von menschlichen Interaktionen in einer virtuellen Umgebung gelegt.\newline
@@ -9,7 +9,7 @@ Im Folgenden werden wir zunächst kurz auf verwandte Arbeiten in diesem Bereich 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Verwandte Arbeiten}
+\section{Verwandte Arbeiten \tiny{(Can Tosun)}}
 Voraussagen über menschliches Verhalten war schon früher Gegenstand der Forschung. Bereits 1977 gab es Forschungen über den Angebotscharakter (Affordances) von Gegenständen \cite{gibson}. Dabei ging es darum, den Gebrauchscharakter von Objekten für Subjekte wie den Menschen zu erkennen. Zum Beispiel kann ein Mensch auf einem Stuhl sitzen oder sich auf ihn stellen, um höher gelegene Gegenstände zu erreichen. Für Elefanten gilt dies im Allgemeinen nicht. Diese Erkenntnisse konnten im Bereich der Benutzerschnittstellen verwendet werden, um technische Gegenstände besser zu charakterisieren. Beispielsweise impliziert ein Schatten um einen Knopf oftmals, dass man ihn drücken kann.
 \newline
 Darauf aufbauend gab es Versuche, diese Ergebnisse im Bereich der Robotik zu nutzen. Das Ziel war es, dass autonome Roboter menschliche Interaktionen wahrnehmen und daraus lernen sollten, menschliches Verhalten vorherzusehen \cite{fritz, montesano,stark, sun}.
@@ -17,15 +17,16 @@ Darauf aufbauend gab es Versuche, diese Ergebnisse im Bereich der Robotik zu nut
 Der Mensch tendiert dazu bestimmte Aktionen eher in bestimmten Bereichen zu vollziehen. Forscher der Universität Stanford haben daher
 die Interaktion des Menschen in den Kontext seiner Umgebung gestellt, um so die Vorhersagen zu verbessern. Dazu wurden sogenannte
 Action-Maps von 3D-Umgebungen erstellt, mit denen Aktionen und bestimmte Regionen verknüpft werden können. Beispielsweise ist
-die Wahrscheinlichkeit der Aktion \glqq{}Sitzen\grqq{} in der Nähe von Stühlen höher als anderswo im Raum. Um dies zu erreichen, haben die Forscher mithilfe von RGB-D Sensoren die Umgebung und die Interaktionen aufgenommen und virtualisiert. Darauffolgend wurden Interaktionen aufgenommen und benannt. Unter Verwendung von Machine Learning Algorithmen wurden dann die Interaktionen erlernt. Auf der Grundlage des erlernten Modells konnten anschließend neue Observationen live klassifiziert werden.
+die Wahrscheinlichkeit der Aktion \glqq{}Sitzen\grqq{} in der Nähe von Stühlen höher als anderswo im Raum. Um dies zu erreichen, haben die Forscher mithilfe von RGB-D Sensoren die Umgebung und die Interaktionen aufgenommen und virtualisiert. Darauffolgend wurden Interaktionen aufgenommen und benannt. Unter Verwendung von Machine Learning Algorithmen wurden dann die Interaktionen erlernt. Auf der Grundlage des erlernten Modells konnten anschließend neue Observationen live klassifiziert werden. \cite{scene-grok}
 \newline
-Im Gegensatz zu der Forschung aus Stanford ist das Augenmerk bei unserer Arbeit nicht auf die Interaktionen in realen Umgebungen gesetzt, sondern auf die Interaktion in virtuellen 3D-Umgebungen, beziehungsweise auf Virtual Reality (VR). In VR Anwendungen werden die Bewegungen des Benutzers in die virtuelle Welt übertragen.
+Im Gegensatz zu der Forschung aus Stanford ist das Augenmerk bei unserer Arbeit nicht auf die Interaktionen in realen Umgebungen gesetzt, sondern auf die Interaktion in virtuellen 3D-Umgebungen, beziehungsweise auf Virtual Reality (VR). In VR Anwendungen werden die Bewegungen des Benutzers in die virtuelle Welt übertragen.\newline
+Als VR-System verwenden wir eine HTC Vive \cite{htc-vive}, die den Kopf und die beiden Hände im Raum tracken kann. Forscher der Jiaotong-Universität Shanghai haben dazu eine Methode entwickelt, mit der sich aus diesen drei Körperteilen die vollständige Bewegung des Körpers rekonstruiert werden kann \cite{body-reconstruction}.
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Das Framework}
+\section{Das Framework \tiny{(Leon Hüber)}}
 \label{sec:framework}
 Für die Klassifikation arbeiten wir im Gegensatz zu \cite{scene-grok} nicht in realen Umgebungen, sondern verwenden virtuellen Szenen, in denen wir uns mit einer HTC Vive \cite{htc-vive} bewegen und den Szenenobjekten interagieren können. Dadurch können wir nicht nur einfacher verschiedene Umgebungen simulieren, sondern haben so auch die Möglichkeit mehr Informationen zu den Szenen und deren Objekten zu erhalten.
 Für die Umsetzung haben wir ein Framework erstellt, das auf der Unreal Engine 4.14 \cite{ue4} aufbaut. Die Unreal Engine stellt die grundsätzlichen Funktionen, wie das Erstellen von Szenen und die Anbindung an die HTC Vive zur Verfügung. Das Framework erweitert die Funktionalität noch um das Aufnehmen und Abspielen von Aktionen, das Erstellen der Merkmalsvektoren aus diesen Aktionen (siehe Abschnitt \ref{subsec:auswahl-der-feature-vektoren}) und der direkten Klassifizierung von neuen Aktionen.
@@ -41,7 +42,7 @@ Damit die ausgeführten Aktionen unabhängig von der Statur des Benutzers bleibe
 
 \subsection{Aktionsaufnahme und Wiedergabe}
 \label{subsec:aktionsaufnahme-und-wiedergabe}
-Der Benutzer startet die Aufnahme in einer Szene seiner Wahl und führt die gewünschte Aktion aus. Währendessen wird in regelmäßigen Abständen die aktuelle Position und Orientierung des HMDs, der Controller und jedes Szenenelements mitgeschrieben. Diese Informationen werden als Jsondokument gespeichert und lassen sich so auch gut für andere Zwecke weiterverwenden. Um gleiche Aktionen später zu gruppieren, müssen deren Aufnahmen gleich benannt werden. Sie dürfen sich im Namen daher nur um Zahlen unterscheiden.\newline
+Der Benutzer startet die Aufnahme in einer Szene seiner Wahl und führt die gewünschte Aktion aus. Währendessen wird in regelmäßigen Abständen die aktuelle Position und Orientierung des HMDs, der Controller und jedes Szenenelements mitgeschrieben. Diese Informationen werden als JSON-Dokument gespeichert und lassen sich so auch gut für andere Zwecke weiterverwenden. Um gleiche Aktionen später zu gruppieren, müssen deren Aufnahmen gleich benannt werden. Sie dürfen sich im Namen daher nur um Zahlen unterscheiden.\newline
 \begin{figure}[hbtp]
 \includegraphics[width=1.0\linewidth]{PlaybackActor.png}
 \caption{Beispiel einer Wiedergabe mit den drei Hüllkörpern. Die Kugeln um die Hände sind hier blau und grün dargestellt. Die Halbkugel für den Körper wird aus dem Schnitt des roten Quaders und der roten Kugel gebildet, da die Unreal Engine keine Halbkugeln als Hüllkörper anbietet.}
@@ -68,20 +69,20 @@ Bei der Live Klassifizierung werden vom Benutzer Aktionen ausgeführt und daraus
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Support Vector Machine SVM}
+\section{Support Vector Machine SVM \tiny{(Dominik Blitsch)}}
 \label{sec:support-vector-machine-svm}
 
 \subsection{Einführung}
 \label{subsec:einfuehrung}
-Eine Support Vector Machine führt eine Klassifikation von Objekten anhand von bereits klassifizierten Objekten aus. Die Objekte werden als n-dimensionale Vektoren $v$ im Objektraum $X \subseteq \mathbb{R}^{n} $ dargestellt, bei denen je ein Wert ein bestimmtes Merkmal (hier Feature) des Objektes darstellt. Zur Klassifizierung wird der Objektraum durch Hyperebenen so geteilt, dass jede Klasse von den anderen getrennt ist. Das heißt es erfolgt eine Zuordnung des Objektraumes $X$ zum Ergebnisraum $Y = {1,...,m} \subseteq \mathbb{R}$, der alle Klassen beinhaltet. Zur Berechnung dieser Hyperebenen dienen die Trainingsdaten $T =((x_{1},y_{1}),...,(x_{l},y_{l})) \subseteq (X \times Y)$, die der SVM übergeben werden. Somit besteht jedes Trainingsset aus einem Objekt $x_{i} \in X$ und der dazugehörigen Klasse $y_{i} \in Y$. Die Hyperebenen werden so gewählt, dass der mögliche Unterschied innerhalb einer Klasse möglichst groß ist. Dies wird dadurch realisiert, dass die Abstände der Vektoren, die der Hyperebene am Nächsten liegen maximiert werden (Maximum Margin). Diese der Hyperebene am nächsten gelegenen Vektoren werden \glqq{}Support-Vectors\grqq{} genannt, da durch diese die optimale Hyperebene \glqq{}stabilisiert\grqq{} wird. Jedoch lassen sich nicht alle Datenpunkte durch Hyperebenen trennen, da es Ausreißer geben kann und Klassen sich teilweise sogar überschneiden. Um diese Daten zu klassifizieren, bedient sich die SVM des Kerneltricks. \cite{laechele-svm}
+Eine Support Vector Machine führt eine Klassifikation von Objekten anhand von bereits klassifizierten Objekten aus. Die Objekte werden als n-dimensionale Vektoren $v$ im Objektraum $X \subseteq \mathbb{R}^{n} $ dargestellt, bei denen je ein Wert ein bestimmtes Merkmal (hier Feature) des Objektes darstellt. Zur Klassifizierung wird der Objektraum durch Hyperebenen so geteilt, dass jede Klasse von den anderen getrennt ist. Das heißt es erfolgt eine Zuordnung des Objektraumes $X$ zum Ergebnisraum $Y = {1,...,m} \subseteq \mathbb{R}$, der alle Klassen beinhaltet. Zur Berechnung dieser Hyperebenen dienen die Trainingsdaten $T =((x_{1},y_{1}),...,(x_{l},y_{l})) \subseteq (X \times Y)^{l}$, die der SVM übergeben werden. Somit besteht jedes Trainingsset aus einem Objekt $x_{i} \in X$ und der dazugehörigen Klasse $y_{i} \in Y$. Die Hyperebenen werden so gewählt, dass der mögliche Unterschied innerhalb einer Klasse möglichst groß ist. Dies wird dadurch realisiert, dass die Abstände der Vektoren, die der Hyperebene am Nächsten liegen maximiert werden (Maximum Margin). Diese der Hyperebene am nächsten gelegenen Vektoren werden \glqq{}Support-Vectors\grqq{} genannt, da durch diese die optimale Hyperebene \glqq{}stabilisiert\grqq{} wird. Jedoch lassen sich nicht alle Datenpunkte durch Hyperebenen trennen, da es Ausreißer geben kann und Klassen sich teilweise sogar überschneiden. Um diese Daten zu klassifizieren, bedient sich die SVM des Kerneltricks. \cite{laechele-svm}
 
 \subsection{Lineare Klassifikation}
 \label{subsec:lineare-klassifikation}
 Die einfachste Art der linearen Klassifikation ist die binäre Klassifikation. Hierbei werden die Vektoren mit Hilfe der Funktion $ f: X \subseteq \mathbb{R} \rightarrow \mathbb{R} $ der positiven $ (f(x)>0) $ oder negativen $ (f(x)<0) $ Klasse zugeordnet. Die trennende Hyperebene lässt sich durch einen Normalenvektor $\vec{\omega} \in X$ und ein Offset $b$ beschreiben.
-Damit gilt:\[ f(\vec{x})=\left\langle \vec{\omega} \cdot \vec{x} \right\rangle\ + b = \sum\nolimits_{i=1}^n \omega x + b \]
+Damit gilt:\[ f(\vec{x})=\left\langle \vec{\omega} \cdot \vec{x} \right\rangle\ + b = \sum\nolimits_{i=1}^n \omega_{i} x_{i} + b \]
 Mit der Entscheidungsfunktion $h : \mathbb{R} \rightarrow \{-1,1\}$:
-\[ h(x) = sign(f(x)) = sign (\sum\nolimits_{i=1}^n \omega x + b)\]
-Eingabevektoren, die sich auf diese Weise trennen lassen, werden linear separabel genannt. Ein Beispiel für linear separierbare Daten ist in Abbildung \ref{fig:LinSeparabel} zu sehen. Hier kann man gut erkennen das sich auf einer Seite der Hyperebene (im $\mathbb{R}^2$ eine Gerade) auch nur eine Klasse von Daten (rot oder grün) befindet.
+\[ h(x) = sign(f(x)) = sign (\sum\nolimits_{i=1}^n \omega_{i} x_{i} + b)\]
+Eingabevektoren, die sich auf diese Weise trennen lassen, werden linear separabel genannt. Ein Beispiel für linear separierbare Daten ist in Abbildung \ref{fig:LinSeparabel} zu sehen. Hier kann man gut erkennen, dass sich auf einer Seite der Hyperebene (im $\mathbb{R}^2$ eine Gerade) auch nur eine Klasse von Daten (rot oder grün) befindet.
 
 \begin{figure}[hbtp]
 \includegraphics[width=0.7\linewidth]{LinSeparabel.png}
@@ -89,7 +90,7 @@ Eingabevektoren, die sich auf diese Weise trennen lassen, werden linear separabe
 \caption{Beispiel für linear separierbare Eingabevektoren. Die Vektoren werden mit Hilfe von h(x) in zwei Klassen überhalb (positiv bzw. grün) und unterhalb (negativ bzw. rot) der Geraden eingeteilt. $\omega$ bestimmt hierbei die Steigung der Geraden, während $b$ sie parallel verschiebt.}
 \label{fig:LinSeparabel}
 \end{figure}\ \\
-Eine lineare Klassifikation, deren Ausgaberaum mehr als 2-dimensional ist $(Y = /{1,...,n/}$, lässt sich durch $n$ binäre Klassifikationen simulieren. Hierbei wird für jede Klasse eine binäre Klassifikation durchgeführt und dann die Eingabe $x$ der Klasse zugeordnet, deren Hyperebene am weitesten entfernt ist.\\ \\
+Eine lineare Klassifikation, deren Ausgaberaum mehr als 2-dimensional ist $(Y = \{1,...,n\})$, lässt sich durch $n$ binäre Klassifikationen simulieren. Hierbei wird für jede Klasse eine binäre Klassifikation durchgeführt und dann die Eingabe $x$ der Klasse zugeordnet, deren Hyperebene am weitesten entfernt ist.\\ \\
 Um die optimale Hyperebene zu einer binären Klassifikation mittels \glqq{}Maximum Margin Classificator\grqq{} zu finden, benötigen wir einige Definitionen: \\
  Der Abstand $\gamma_{i}$ (bzw. Margin) zwischen einem Beispiel $(x_{i},y_{i})$ und einer Hyperebene ist gegeben durch:
 \[ \gamma_{i} = y_{i}(\langle \omega \cdot x_{i} \rangle + b )\]
@@ -143,18 +144,19 @@ Als Implementierung der SVM haben wir die C++ bzw. Java-Bibliothek LIBSVM genutz
 \label{subsec:auswahl-der-feature-vektoren}
 Die richtige Anzahl und Auswahl der Merkmale im Featurevektor ist essenziell für eine gute Klassifizierung, da die Vektoren unterschiedlicher Klassen auch möglichst unterschiedlich sein müssen, damit die SVM trennende Hyperebenen findet. Deshalb haben wir uns zunächst für einen Merkmalsraum in der 10. Dimension entschieden, um möglichst viele Unterschieden zwischen Klassen erkennen zu können. Unsere Features hierbei waren:
 \begin{itemize}
+    \item Kopfhöhe \ \ \quad\qquad\qquad\qquad\qquad\qquad\qquad\qquad$h \in \mathbb{R}$
     \item Blickrichtung \qquad\qquad\qquad\qquad\qquad\qquad\qquad$b \in \mathbb{R}^3$
     \item Richtungsvektor von Kopf zu rechter Hand \quad $r \in \mathbb{R}^3$    
     \item Richtungsvektor von Kopf zu linker Hand \ \ \quad $l \in \mathbb{R}^3$
 \end{itemize}
 \begin{figure}[hbtp]
 \includegraphics[width=1.0\linewidth]{OldFeatures.png}
-\caption{Hier sind die Datensätze der ersten Features (b, r, l) zu sehen. Um den 10-Dimensionalen Featureraum beobachtbar zu machen, wurde er per Multi-Dimensional-Scaling in den $\mathbb{R}^3$ überführt.}
+\caption{Hier sind die Datensätze der ersten Features ($h$, $b$, $r$, $l$) zu sehen. Um den 10-Dimensionalen Featureraum beobachtbar zu machen, wurde er per Multi-Dimensional-Scaling in den $\mathbb{R}^3$ überführt.}
 \label{fig:Old-Features}
 \end{figure}
 Wie in Abbildung \ref{fig:Old-Features} zu sehen, sind die Vektoren einer Klasse häufig nicht geclustert, sondern über große Bereiche verteilt. So sieht man zum Beispiel, dass die Daten der Aktion \glqq{}PC benutzen\grqq{} in zwei Bereichen auftauchen. Diese Aktion wurde von uns in zwei verschiedenen und unterschiedlich orientierten Szenen aufgenommen. Dadurch, dass wir die Blickrichtung $b$ als Feature genommen haben, sind die Vektoren je nach Szene sehr unterschiedlich, obwohl jeweils die gleiche Aktion ausgeführt wurde. Dies sorgt dafür, dass die einzelnen Aktionen nicht gut voneinander getrennt werden können und somit eine passende Klassifikation fehlschlägt. Daran erkennt man sehr gut, dass die Blickrichtung als Feature nicht geeignet ist. Auch die Vektoren zu den Händen $l,r$ sind richtungsabhängig und daher als Merkmale ebenfalls nicht gut geeignet.\\
 Dieser Featurevektor ist also nicht gut besonders ideal um Aktionen zu klassifizieren. Das zeigt sich auch in der Trainings- und Testfunktion der LIBSVM. Dort war die Klassifizierung der Testdaten nach dem Training nur bei etwas über 40\%. Bei 6 Aktionen ist das zwar deutlich über einer randomisierten Klassifikation, aber für den betriebenen Aufwand deutlich zu wenig.\\
-Deshalb haben wir uns dann entschlossen die Features etwas zur reduzieren, sodass diese innerhalb einer Klasse möglichst ähnlich bleiben und nicht von dem verwendeten Szenen oder der Richtung abhängen. Außerdem haben wir die in \cite{scene-grok} definierten Bounding Boxes um den Körper genutzt, um Informationen über möglicherweise verwendete Szenenelemente zu bekommen. Dadurch ergaben sich folgende Merkmale:
+Deshalb haben wir uns dann entschlossen die Features etwas zu reduzieren, sodass diese innerhalb einer Klasse möglichst ähnlich bleiben und nicht von dem verwendeten Szenen oder der Richtung abhängen. Außerdem haben wir die in \cite{scene-grok} definierten Bounding Boxes um den Körper genutzt, um Informationen über möglicherweise verwendete Szenenelemente zu bekommen. Dadurch ergaben sich folgende Merkmale:
 \begin{itemize}
     \item Höhe des Kopfes $h$
     \item kleinere Entfernung vom Kopf zur Hand $min(\lVert l \rVert,\lVert r \rVert)$
@@ -165,7 +167,7 @@ Um eine Unabhängigkeit bei der Ausführung einer Aktion mit rechter oder linker
 
 \subsection{Qualität der Featurevektoren}
 \label{subsec:qualitaet-der-feature-vektoren}
-Als ersten Test der neuen Featurevektoren haben wir die Testfunktion der LIBSVM genutzt. Hierbei bekamen wir eine richtige Klassifizierung in 98\% der Testdaten. Eine so gute Klassifizierung kann häufig auch einer \glqq{}Überfittung\grqq{} geschuldet sein. Das bedeutet, dass die Hyperebenen die Datenpunkte sehr eng umschließen und somit sehr ähnliche Featurevektoren sehr gut erkannt werden, aber sobald eine leichte Abweichung des Standardfalls auftritt, wird der Vektor der falschen Klasse zugeordnet. Um dies auszuschließen, haben wir mehrere Live-Klassifizierungs-Tests gemacht, in denen wir die Aktionen mit sehr unterschiedlichen Bewegungsabläufen wiederholt haben. Auch hier wurde unsere Bewegung sehr gut klassifiziert, sodass eine Überfittung ausgeschlossen werden konnte.
+Als ersten Test der neuen Featurevektoren haben wir die Testfunktion der LIBSVM genutzt. Hierbei bekamen wir eine richtige Klassifizierung in 98\% der Testdaten. Eine so gute Klassifizierung kann häufig auch dem so genannten \glqq{}Overfitting\grqq{} geschuldet sein. Das bedeutet, dass die Hyperebenen die Datenpunkte sehr eng umschließen und somit sehr ähnliche Featurevektoren sehr gut erkannt werden, aber sobald eine leichte Abweichung des Standardfalls auftritt, wird der Vektor der falschen Klasse zugeordnet. Um dies auszuschließen, haben wir mehrere Live-Klassifizierungs-Tests gemacht, in denen wir die Aktionen mit sehr unterschiedlichen Bewegungsabläufen wiederholt haben. Auch hier wurde unsere Bewegung sehr gut klassifiziert, sodass Overfitting ausgeschlossen werden konnte.
 \begin{figure}[hbtp]
 \includegraphics[width=1.0\linewidth]{NewFeatures.png}
 \caption{Hier sind die Datensätze der finalen Features zu sehen. Auch hier wurde der Featureraum mittels Multi-Dimensional-Scaling in den $\mathbb{R}^3$ überführt.}
@@ -179,7 +181,7 @@ Um Aktionen ohne Virtual Reality durchzuführen, müssen sowohl die Datenaufnahm
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Limitationen}
+\section{Limitationen \tiny{(Mohammad Vosoughi)}}
 \label{sec:limitation}
 
 Wir konnten den Aufwand Aktionen in realen Szenen aufzunehmen durch die Verwendung von virtuellen Szenen und dem VR-System HTC Vive stark reduzieren. Allerdings treten dadurch auch neue Schwierigkeiten auf. Mit der HTC Vive lassen sich nur die Positionen und Orientierungen der Hände und des Kopfs verfolgen. Bei vielen Aktionen ist jedoch auch die Interaktion von anderen Körperteilen mit der Umgebung entscheidend. Zum Beispiel ist es für die Aktion \glqq{}Fußball spielen\grqq{} entscheidend, dass sich ein Ball in der Nähe eines Fußes befindet. Um solche Aktionen genau zu beschreiben, ist es dann notwendig, mehrere Tracker zu verwenden. In Abbildung \ref{fig:Human-Body} sind die relevanten Positionen für solche Tracker markiert. Ein interessanter Ansatz mit weniger Trackern auszukommen wird in \cite{body-reconstruction} beschrieben. Dort wird eine Methode vorgestellt, mit der sich die Körperhaltung in Echtzeit nur aus den Positionen und Orientierungen von Kopf und Händen rekonstruieren lässt.\newline
@@ -198,7 +200,7 @@ Wie im Abschnitt \ref{subsec:auswahl-der-feature-vektoren} beschrieben, verwende
 \end{figure}
 Aufgrund der Ähnlichkeit fällt in diesen Fällen die Masse des nächsten Gegenstandes stärker ins Gewicht. Haben dann die Szenenobjekte ähnliche Massen, wie die Getränkeflasche und der Basketball, kann das zu Fehlklassifizierungen führen. Wird zum Beispiel im Stehen aus einer Flasche getrunken, so kann die Aktion fälschlicherweise als \glqq{}Basketball spielen\grqq{} klassifiziert werden. 
 
-\section{Diskussion und Ausblick}
+\section{Diskussion und Ausblick \tiny{(Mohammad Vosoughi)}}
 \label{diskussion-ausblick}
 Wir haben eine Methode zur Erforschung von Aktionen vom Menschen in virtueller Realität vorgestellt. Diese Methode bildet Merkmalsvektoren aus der Pose eines Menschen und den Eigenschaften der Gegenstände aus der Szene und verwendet dabei eine SVM als Klassifizierer. Um die Pose der durchführenden Person darzustellen, wurden die Kopfhöhe und die Abstände von den Händen zum Kopf genutzt und unter Berücksichtigung der Körpermaße des Nutzers kalibriert. 
 
